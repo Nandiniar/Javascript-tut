@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | last</title>
+</head>
+<body style="background-color:#212121; color:white;">
+  <ul class="language">
+    <li>Javascript</li>
+  </ul>
+
+  <script>
+    function addLanguage(langName) {
+      const li = document.createElement('li'); 
+      li.innerHTML = `${langName}`;           
+      document.querySelector('.language').appendChild(li); 
+    }
+
+    addLanguage("Python");
+    addLanguage("Typescript")
+
+    function addOptiLanguage(langName){
+        
+      const li=  document.createElement('li')
+      li.appendChild(document.createTextNode(langName))
+      document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("Dart")   // yeh dono method same he hai bas second wala optimize hai second wale case me poora traverse nhi karna oadhega
+
+
+
+    // how to edit value
+
+    // 1 method - this is not optimized
+ const secondlang=   document.querySelector("li:nth-child(2)")
+ //secondLang.innerHTML="C#"
+ // 2 method
+
+ const newli=document.querySelector('li')
+ newli.textContent="Nand"
+ secondlang.replaceWith(newli)
+
+  </script>
+</body>
+</html>
