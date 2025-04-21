@@ -1,0 +1,68 @@
+/* Base styles for body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #212121;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Container for the color buttons and text */
+.canvas {
+    margin-top: 50px;
+}
+
+/* Color buttons (the <span> elements) */
+.button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Individual color styles */
+#grey {
+    background-color: grey;
+}
+#white {
+    background-color: white;
+    border: 2px solid #ccc; /* to show white button clearly */
+}
+#blue {
+    background-color: blue;
+}
+#yellow {
+    background-color: yellow;
+}
+#purple {
+    background-color: purple;
+}
+
+/* Headings */
+h1 {
+    font-size: 32px;
+    color: #333;
+}
+h2 {
+    font-size: 20px;
+    color: #666;
+}

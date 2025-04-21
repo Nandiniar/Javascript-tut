@@ -9,7 +9,7 @@
   <ul class="language">
     <li>Javascript</li>
   </ul>
-
+</body>
   <script>
     function addLanguage(langName) {
       const li = document.createElement('li'); 
@@ -34,6 +34,7 @@
 
     // 1 method - this is not optimized
  const secondlang=   document.querySelector("li:nth-child(2)")
+ console.log(secondlang)
  //secondLang.innerHTML="C#"
  // 2 method
 
@@ -41,6 +42,17 @@
  newli.textContent="Nand"
  secondlang.replaceWith(newli)
 
+
+ // edit in case of typescript
+  const firstLang=document.querySelector("li:first-child")
+  firstLang.outerHTML='<li>Typescript</li>'
+
+
+
+  // reomove
+  const lastLang=document.querySelector("li:last-child")
+  // lastLang.remove()
+
   </script>
-</body>
+
 </html>
