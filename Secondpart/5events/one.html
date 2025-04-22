@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html event</title>
+</head>
+<body style="background-color: #414141;color:aliceblue">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src ="https://images.pexels.com/photos/31499308/pexels-photo-31499308/free-photo-of-elegant-dessert-dining-in-modern-cafe-setting.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="photoshop" src ="https://images.pexels.com/photos/26746959/pexels-photo-26746959/free-photo-of-close-up-of-a-person-holding-a-flower.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src ="https://images.pexels.com/photos/31556531/pexels-photo-31556531/free-photo-of-minimalist-workspace-with-smartphone-and-accessories.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src ="https://images.pexels.com/photos/20821506/pexels-photo-20821506/free-photo-of-easter-eggs-in-a-bowl.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src ="https://images.pexels.com/photos/12567396/pexels-photo-12567396.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a  style="color:aliceblue";href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+// javascript ek sequentiaaly run language hai yaha jo bhi event run hota hai wo sequentially hota hai
+// document.getElementById('owl').onclick=function(){
+//     alert("owl clicked")
+// }
+document.getElementById('owl').addEventListener('click',function(e){
+    console.log(e)
+    console.log(e.timeStamp)
+    console.log("owl clicked ")
+    alert("owl clicked again")
+},false)                        // addEventListener means ke jab click karenge tab  function wala implement hogaa third paramter false hogaa usse likhne ke resuirement nhi hote like this addEventListener('click',function(){},false)  
+
+//eventpropagation -  two types-event bubling,event capturing
+
+document.getElementById('images').addEventListener('click',function(e){
+    console.log("clicked inside the url")
+},false ) // yeh wala click hoga jab aapne images ya ul pe click karenge
+
+document.getElementById('owl').addEventListener('click',function(e){
+    console.log("owl c");
+    e.stopPropagation() ; //  - ab isme event bubled hoke upar ke aur nhi jayege
+},false)
+ // agar hum false likhte toh wo event capturing hote jisme badhe wale niche aayenge 
+ // agar hum true likhte toh wo event bubbling hote jisme chote wala upar aataa
+ // defualt value  false hota hai issliye hum usse likhte nhi hai
+
+
+
+document.getElementById('google').addEventListener('click',function(e){
+    console.log("google clicked")
+e.preventDefault()
+e.stopPropagation()
+},false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// impoortant in events - type like keyboard ke mouse ke,timestamp,defaultPrevented ,target,toelement,sourceelement
+//currentTarget, client keposition x hai ya y yeh e se mil jayegaa,screenx,screeny,alltkey,ctrlkey,shiftkey,keyCodr
+// attachEvent () phale ke tym pe use hota tha jab internet explorer use hota tha
+
+
+
+
+</script>
+</html>

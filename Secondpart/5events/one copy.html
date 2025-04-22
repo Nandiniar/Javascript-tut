@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html event</title>
+</head>
+<body style="background-color: #414141;color:aliceblue">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src ="https://images.pexels.com/photos/31499308/pexels-photo-31499308/free-photo-of-elegant-dessert-dining-in-modern-cafe-setting.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="photoshop" src ="https://images.pexels.com/photos/26746959/pexels-photo-26746959/free-photo-of-close-up-of-a-person-holding-a-flower.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src ="https://images.pexels.com/photos/31556531/pexels-photo-31556531/free-photo-of-minimalist-workspace-with-smartphone-and-accessories.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src ="https://images.pexels.com/photos/20821506/pexels-photo-20821506/free-photo-of-easter-eggs-in-a-bowl.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src ="https://images.pexels.com/photos/12567396/pexels-photo-12567396.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a  style="color:aliceblue";href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+<script>
+
+    // agar humare jo images hai usse click karke hatana ho toh
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e)
+        console.log(e.target)
+        console.log(e.target.parentNode)  // hum aise karne se target ke andar wale value bhi print kara sakte hai 
+        // humne parentNode use kara hai kyuki hume poora li delete karna tha and wo parentNode se hota hai
+        let removeIt=e.target.parentNode
+    //  removeIt.remove() // iska means hai ke jo bhi click karenge wo remove hora rahegaa
+      //  removeIt.parentNode.removeChild(removeIt)  // yeh dono same he method hai
+      // in dono method me bas yeh problem hai ke agar humne li me means dots pe click kar diya toh sab he delete ho jayegaaa
+console.log(e.target.tagName) // isse tagname ke bare me pata chalta hai
+// hum poora delete karne wale value ko aise solve kar sakte hai like ke agar tagname ===IMG hai toh delete kari else nhi
+
+if(e.target.tagName==='IMG'){ // ab aise karne se bas jiska tagname image hoga wo he remove hoga
+    console.log(e.target.id) // isse event ke id print hoge
+    let removeIt=e.target.parentNode
+    removeIt.remove()
+}
+    },false)
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+javascript async code
+ 
+javascript is synchronous , it has single thread means ke 1 he thread pe sare kaam hote hai jsike wajay se wo slow hota hai aur comparsion me  only single thread work here at a tym means
+it excute one line of code at a tymjavascript me hote hai
+
+this behaviour is of default javascript means ke wo synchronous and single thread default  isme means ke exceution context hota hai means ke agar ek task nhi complete hua toh wo next nhi start karega i.e each operation waits for the last one to complete before exceuting
+
+
+two types of code are written in javascript - blocking code and non blocking code
+ 1 blocking code- block the flow of program - i.e read file sync (file system ka access node js me milta hai)
+ 2 Non blocking code - doesnot block exceution - read file async
+
+ web api browser ke andar milte hai  web ke andar he dom ka access milta hai
+
+ 
