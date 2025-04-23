@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121;">
+    
+</body>
+<script>
+    // phale xml ke request ajax ke form me hote the
+    // yeh phale hota tha
+  const xhr=new   XMLHttpRequest()
+  const requesturl='https://api.github.com/users/Nandiniar'
+  xhr.open('GET',requesturl);
+xhr.onreadystatechange=function(){
+    console.log(xhr.readyState)
+    if(xhr.readyState===4){
+        // const data=this.responseText
+        // console.log(typeof data) // yeh string hai isse object me convert karne ke liye
+        const data=JSON.parse(this.responseText) // isse object me convert karne ke liye humne JSON Me karaa hai pare
+        console.log(typeof data)
+        console.log(data.followers)
+        console.log(this.responseText)
+    }
+}
+  console.log("HERE")
+ // console.log(xhr.readyState)
+    xhr.send(); // jab hum yeh send karte hai tab start hit hai
+   //V8 ENGINE JAVASCRIPT KO RUN KARWATA HAI
+</script>
+</html>
