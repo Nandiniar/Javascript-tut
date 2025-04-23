@@ -32,16 +32,17 @@ document.getElementById('owl').addEventListener('click',function(e){
 
 //eventpropagation -  two types-event bubling,event capturing
 
+// event bubling  me phale element waha jayega jo click kara then parents and then grandparents pe , isske value false hote hai
 document.getElementById('images').addEventListener('click',function(e){
     console.log("clicked inside the url")
 },false ) // yeh wala click hoga jab aapne images ya ul pe click karenge
 
 document.getElementById('owl').addEventListener('click',function(e){
     console.log("owl c");
-    e.stopPropagation() ; //  - ab isme event bubled hoke upar ke aur nhi jayege
+   // e.stopPropagation() ; //  - ab isme event bubled hoke upar ke aur nhi jayege
 },false)
- // agar hum false likhte toh wo event capturing hote jisme badhe wale niche aayenge 
- // agar hum true likhte toh wo event bubbling hote jisme chote wala upar aataa
+ // agar hum true likhte toh wo event capturing hote jisme badhe wale niche aayenge 
+ // agar hum false likhte toh wo event bubbling hote jisme chote wala upar aataa
  // defualt value  false hota hai issliye hum usse likhte nhi hai
 
 

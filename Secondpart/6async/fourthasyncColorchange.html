@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color change</title>
+</head>
+<body style="background-color: 212121;" color="fff">
+    <nav>
+        <a href="/ "aria-current="page">Home</a>
+
+    </nav>
+
+        <h1>Start should change the background color every second</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+
+
+</body>
+<script>
+   // generate a random color
+   const randomColor=function(){
+    const hex="0123456789ABCDEF" // this is hex value yeh position
+    let color='#'
+    for(let i=0;i<6;i++){
+color+=hex[Math.floor(Math.random()*16)]
+    }
+
+
+    console.log(Math.floor(Math.random() * 16)) ;// isme value 0 se 16 tak aaygeee
+    return color;
+   }
+   console.log(randomColor())
+   let intervalid;
+   const startChangingcolor=function(){
+    if(!intervalid){
+        intervalid=setInterval(changebg,1000)
+    }
+
+    function changebg(){
+      document.body.style.backgroundColor=randomColor()
+    }
+  
+
+   }
+
+   const stopChangingcolor=function(){
+clearInterval(intervalid)
+intervalid=null;
+   }
+   document.querySelector('#start').addEventListener('click',startChangingcolor);
+   document.querySelector('#stop').addEventListener('click',stopChangingcolor)
+</script>
+</html>

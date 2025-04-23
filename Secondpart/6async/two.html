@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async code</title>
+</head>
+<body>
+    <h1>Async code</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    setTimeout(function(){                                                     // setTimeout ek method hai and yeh api ko bhi call karta haiisme handleer ek function jaisa hai jiska yaha name nhi and may be dusre element k refernce pass kara ho
+        console.log("Nandini")
+    },2000) // yaha tym millisecond me hota hai
+    // setTimeout means ke particular tym like yaha 2 sec ke baad wo kaam kar legaaa ek bari he
+
+    // setInterval means interval ka break ke itna tym do like 2 sec then wo har 2 sec ke baad kaam karta rahegaaaa
+
+
+    // hu function ko phale bhi declare karke kar sakte hai
+
+    const sayNandini=function(){
+        console.log("NNNNNN");
+    }
+    document.querySelector('h1').innerHTML="Best js series" // ab aise karne se 2 sec ke baadkhud he wo titile change ho jayegaa
+
+
+    /// if we want ke 2 sec ke baad aaye
+    const changeName=function(){
+        document.querySelector('h1').innerHTML="do your work"
+    }
+
+ const changeme=  setTimeout(changeName,1000)
+ 
+ //clearTimeout(changeme) iska means hai ke jo bhi humne setTImeout me particular time ke baad changes bole the wo sab ab remove kar do and 
+ // and phale jaise kar do 
+
+
+ document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeme)
+    console.log("STOP") 
+ })// iss poore function ka means hai e jab button pe click hota hai toh  jo bhi title me changes the wo o jayee
+
+    setTimeout(sayNandini,2000);// yaha sayNandini header khilayegaaa
+</script>
+
+</html>
