@@ -11,7 +11,7 @@ two types of code are written in javascript - blocking code and non blocking cod
  2 Non blocking code - doesnot block exceution - read file async
 
  web api browser ke andar milte hai  web ke andar he dom ka access milta hai
- web api like set timeout, set interval
+ web api like set timeout, set intervaljavascript is synchronous , it has single thread me
  set timeout means ke har particular tym ke baad wo chiz hogee
  // fetch ke andar  promise exceute hota hai fetch sabse fast hai isme  agar koi aur bhi phale ho rha ho tab bhi wo ho jata hai
 

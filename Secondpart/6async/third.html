@@ -14,11 +14,13 @@
 <script>
     
 const sayDate=setInterval(function(str){
-console.log("Nandini",Date.now())
-},1000)
+console.log(str,Date.now())
+},"Nandini",1000)
 
 const intervalid=setInterval(sayDate,1000,"hii")   // isme hum paramters bhi dal sakte hai
+
 clearInterval(intervalid)
+
 
 </script>
 
